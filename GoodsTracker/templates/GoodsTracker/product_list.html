@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Список всех товаров</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Товар</th><th>Цена</th><th>Дата</th>
+		</tr>
+		{% for product in product_list %}
+		<tr>
+			<td>{{ product.name }}</td>
+			<td>{{ product.price }}</td>
+			<td>{{ product.purchaise_date }}</td>
+		{% endfor %}
+	</table>
+</body>
+</html>
