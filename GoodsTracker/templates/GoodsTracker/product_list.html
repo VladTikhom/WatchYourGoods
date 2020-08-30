@@ -1,20 +1,60 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
+{% load static %}
 <html>
-<head>
-	<title>Список всех товаров</title>
-</head>
-<body>
-	<table>
-		<tr>
-			<th>Товар</th><th>Цена</th><th>Дата</th>
-		</tr>
-		{% for product in product_list %}
-		<tr>
-			<td>{{ product.name }}</td>
-			<td>{{ product.price }}</td>
-			<td>{{ product.purchaise_date }}</td>
-		{% endfor %}
-	</table>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<title>Watch Your Goods!</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<div class="logo"><a href="">Watch<span class="black">Your</span><span class="gray">Goods</span></a><p>Lorem ipsum dolor sit amet</p></div>
+				<ul class="nav">
+					<li><a href="#" class="active">Главная</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Blogs</a></li>
+					<li><a href="#">Work</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Contacts</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="rightCol">
+					<ul class="rightNav">
+						<li><a href="#">Natus error sit voluptatem</a></li>
+					</ul>
+					<div class="block">
+						<h3>Lorem ipsum dolor sit</h3>
+						<p><i>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</i></p>
+						<p><a href="#" class="more">Read more »</a></p>
+					</div>
+				</div>
+				<div class="main">
+					<table class="bordered">
+						<thead>
+							<tr>
+								<th>Категория</th>
+								<th>Товар</th>
+								<th>Цена</th>
+								<th>Дата</th>
+								<th>Магазин</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for product in product_list %}
+							<tr>
+								<td>{{ product.category }}</td>
+								<td>{{ product.name }}</td>
+								<td>{{ product.price }}</td>
+								<td>{{ product.purchaise_date }}</td>
+								<td>{{ product.store }}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
